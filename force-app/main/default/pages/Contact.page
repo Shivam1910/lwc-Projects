@@ -1,0 +1,45 @@
+<apex:page standardController="contact" recordsetvar="contacts" >
+    <apex:form >
+        <apex:pageBlock title="Contact Table">
+            <apex:pageBlockTable value="{!contacts}" var="con" rows="3"> 
+                <apex:column value="{!con.name}"/>
+                <apex:column value="{!con.email}"/> 
+                <apex:column headerValue="Contact" value="{!con.phone}"/>
+            </apex:pageBlockTable>
+            <apex:pageBlockButtons > 
+                <apex:commandButton action="{!first}" value="First"/>
+                <apex:commandButton action="{!previous}" value="Previous"/> 
+                <apex:commandButton action="{!next}" value="Next"/>
+                <apex:commandButton action="{!last}" value="Last"/>
+            </apex:pageBlockButtons>
+        </apex:pageBlock>
+        <apex:pageBlock title="Data Table">
+            <apex:dataTable value="{!contacts}" var="con">
+                <apex:column headervalue="Name" value="{!con.name}"/>
+                <apex:column headerValue="Email" value="{!con.Email}"/>
+                <apex:column headerValue="Contact" value="{!con.Phone}"/>   
+            </apex:dataTable>
+        </apex:pageBlock>
+    </apex:form>
+    <apex:pageBlock title="Data List">
+        <apex:datalist value="{!contacts}" var="con" type="circle"> 
+            <apex:outputText value="{!con.Name}"/>
+            <apex:outputText value="{!con.Email}"/> 
+            <apex:outputText value="{Icon. Phone}"/>
+        </apex:datalist>
+    </apex:pageBlock>
+    <apex:pageBlock >
+        <table width="100" border="2px">
+            <tr>
+                <th>Name</th>
+                <th>Email</th>
+            </tr>
+            <apex:repeat value="{!contacts}" var="contactRecord">
+                <tr>
+                    <td>{!contactRecord.Name}</td> 
+                    <td>{!contactRecord.Email}</td>
+                </tr>
+            </apex:repeat>
+        </table>
+    </apex:pageBlock>
+</apex:page>

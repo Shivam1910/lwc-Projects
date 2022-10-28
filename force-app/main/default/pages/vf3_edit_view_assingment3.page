@@ -1,0 +1,31 @@
+<apex:page standardController="Student__c" recordSetVar="Students">
+    <apex:form >
+        <apex:sectionHeader title="Student" subtitle="Student Records"/>
+        <apex:pageBlock title="Records">
+            <apex:pageBlockTable value="{!Students}" var="st" rows="5">
+                <apex:column value="{!st.Name}"/>
+                <apex:column value="{!st.Gender__c}"/>
+                <apex:column value="{!st.Mobile_No__c}"/>
+                <apex:column value="{!st.Email_Id__c}"/>
+                <apex:column value="{!st.Date_And_Time__c}"/>
+                <apex:column headerValue="Action"> 
+                    <apex:commandLink action="/apex/edit_Page?id={!st.id}" Value="edit"/>
+                    <apex:commandLink action="/apex/view_page?id={!st.id}" Value="/view(visualforce)"/> 
+                </apex:column>
+                <apex:column headerValue="Action"> 
+                    <apex:commandLink action="/lightning/r/Student__c/{!st.id}/view" Value="view(standard)"/>
+                </apex:column>
+                
+            </apex:pageBlockTable>
+            
+            <apex:pageBlockButtons >
+                <apex:commandButton action="https://ibirdssoftwareservicepvtltd-dev-ed.lightning.force.com/lightning/o/Student__c/new?count=3&nooverride=1&useRecordTypeCheck=1&navigationLocation=LIST_VIEW&uid=16633044676053145&backgroundContext=%2Flightning%2Fo%2FStudent__c%2Flist%3FfilterName%3D00B5g00000ZGjJ8EAL" value="new student"/>
+                <apex:commandButton action="{!first}" value="first"/>
+                <apex:commandButton action="{!next}" value="next"/>
+                <apex:commandButton action="{!last}" value="last"/>
+                <apex:commandButton action="https://ibirdssoftwareservicepvtltd-dev-ed.lightning.force.com/lightning/o/Student__c/list?filterName=00B5g00000ZGjJ8EAL"  value="student tab"/>
+                
+            </apex:pageBlockButtons>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

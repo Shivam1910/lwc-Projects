@@ -1,0 +1,24 @@
+<apex:page controller="AttachementClass">
+    <apex:form id="referesh">
+        <apex:pageBlock title="Contact">
+            <apex:pageBlockTable value="{!contactList}" var="con">
+                <apex:column headerValue="Serial No" value="{!con.sNo}"/> 
+                <apex:column headerValue="Name" value="{!con.Name}"/>
+                <apex:column headerValue="Phone" value="{!con.Phone}"/>
+                <apex:column headerValue="Lead Source" value="{!con.LeadSource}"/>
+                <apex:column headerValue="Email" value="{!con.Email}"/>
+                <apex:column headerValue="Preview">
+                    <img width="50" src="/servlet/servlet.FileDownload?file={!con.atId}"/>
+                </apex:column>
+                <apex:column headerValue="Upload">
+                    <apex:commandButton action="/apex/upload_attach?atId={!con.Id}" value="Upload" rerender="referesh"/>
+                </apex:column>
+                <apex:column headerValue="Delete" >
+                    
+                    <apex:commandButton action="{!deleteRecord}" value="Delete" rerender="referesh"/>
+                    <apex:param value="{!con.atId}" assignTo="{!attId}" name="Location"/>
+                </apex:column>
+            </apex:pageBlockTable>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

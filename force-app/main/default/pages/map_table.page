@@ -1,0 +1,12 @@
+<apex:page controller="MapTable">
+<apex:sectionHeader title="Account " subtitle="Account Records"/>
+<apex:form >
+<apex:pageBlock >
+    <apex:pageBlockTable value="{!wrapperRecords}" var="wrap">
+        <apex:column headerValue="serial number" value="{!wrap.Sno}" />
+        <apex:column headerValue="Account Name" value="{!wrap.name}"/>
+        <apex:column headerValue="Count" value="{!wrap.countRec}"/>
+    </apex:pageBlockTable>
+</apex:pageBlock>
+</apex:form> 
+</apex:page>

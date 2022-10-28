@@ -1,0 +1,43 @@
+<apex:page controller="AttachmentCopy">
+    <apex:form >
+        <apex:actionFunction action="{!fillAttachmentWrapper}" name="fillAttachmentWrapper" />
+        <!---------------------------------------------------Top header ----------------------------------------------------->
+        <apex:pageBlock title="Copy Attachment">
+            <apex:pageBlockSection >
+                <apex:pageBlockSectionItem >
+                    <h1>
+                        Object Select List
+                    </h1>
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem >
+                    <apex:selectList size="1" value="{!selectedObjectName}" onchange="fillAttachmentWrapper()">
+                        <apex:selectOptions value="{!Objects}"></apex:selectOptions>
+                    </apex:selectList>
+                </apex:pageBlockSectionItem>
+            </apex:pageBlockSection>
+        </apex:pageBlock>
+        <!---------------------------------------------------Attachment Records----------------------------------------------------->
+        <apex:actionFunction action="{!allCheck}" name="masterCheck"/>
+        <apex:actionFunction action="{!singleCheckMethod}" name="singleCheck"/>
+        <apex:pageBlock rendered="{!showAttachmentTable}">
+            <apex:pageBlockTable value="{!attachmentRecords}" var="attachmentRecord">
+                <apex:column headerValue="Serial No" value="{!attachmentRecord.sNo}" />
+                <apex:column >
+                    <apex:facet name="header">
+                    <apex:inputCheckbox value="{!AllCheck}" onchange="masterCheck();"/>
+                    </apex:facet>
+                         <apex:inputCheckbox value="{!attachmentRecord.isSelected}" onchange="singleCheck();"/>
+                </apex:column>
+                <apex:column headerValue="Name" value="{!attachmentRecord.name}" />
+                <apex:column headerValue="Content Type" value="{!attachmentRecord.contentType}" />
+                <apex:column headerValue="preview" >
+                    <img src="{!attachmentRecord.attachmentUrl}" height="20px" widht="20px"/>
+                </apex:column>
+            </apex:pageBlockTable>
+        </apex:pageBlock>
+        
+        <apex:pageBlock rendered="{!!showAttachmentTable}">
+            <apex:pageMessages />
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

@@ -1,0 +1,17 @@
+<apex:page controller="StudentList">
+    <apex:form > 
+        <apex:pageBlock >
+            <apex:pageBlockButtons >
+                <apex:commandButton action="{!addRow}" value="Add Row" immediate="true"/>
+                <apex:commandButton action="{!deleteRow}" value="Delete Row"/>
+                <apex:commandButton action="{!saveRow}" value="Save Row"/>
+            </apex:pageBlockButtons>
+            <apex:pageBlockTable value="{!studentData}" var="cont">
+                <apex:column headerValue="Name"><apex:inputField value="{!cont.Name}"/></apex:column>
+                <apex:column headerValue="Gender"><apex:inputField value="{!cont.Gender__c}"/></apex:column>
+                <apex:column headerValue="Email"><apex:inputField value="{!cont.Email_Id__c}"/></apex:column>
+                <apex:column headerValue="DOB"><apex:inputField value="{!cont.Date_And_Time__c}"/></apex:column>
+            </apex:pageBlockTable>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

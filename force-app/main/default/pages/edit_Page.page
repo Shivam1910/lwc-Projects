@@ -1,0 +1,22 @@
+<apex:page standardController="Student__c">
+    <apex:form >
+        <apex:sectionHeader title="Edit Detail" subtitle="Student" />    
+        <apex:pageBlock title="Student Page Block">
+            <apex:pageBlockSection >
+
+                <apex:inputField value="{!Student__c.Name}"/>
+                <apex:inputField value="{!Student__c.Email_Id__c}"/>
+                 <apex:inputField value="{!Student__c.Gender__c}"/>
+                 <apex:inputField value="{!Student__c.Mobile_No__c}"/>
+                 <apex:inputField value="{!Student__c.Date_And_Time__c}"/>
+                            </apex:pageBlockSection>
+             <apex:pageBlockButtons >
+                <apex:commandButton action="{!save}" value="save"/>
+                <apex:commandButton action="{!quicksave}" value="quicksave"/>
+                <apex:commandButton action="{!cancel}" value="cancel"/>
+                
+            </apex:pageBlockButtons>
+        </apex:pageBlock>
+        
+    </apex:form>
+</apex:page>

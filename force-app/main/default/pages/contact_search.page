@@ -1,0 +1,19 @@
+<apex:page controller="ContactSearch">
+<form>
+    <apex:pageBlockSection>
+       <apex:column   header = Contact>
+
+       </apex:column>
+
+
+
+    </apex:pageBlockSection>
+
+
+
+
+</form>
+
+
+
+</apex:page>
