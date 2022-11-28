@@ -1,0 +1,10 @@
+<template>
+    <lightning-card>
+        <div if:true={countcountry}>
+            <h3> You have visited : {countryCount} <p>Country</p>
+            </h3>
+        </div>
+        <c-software-child-parent oncount={countcountry}></c-software-child-parent>
+    </lightning-card>
+
+</template>

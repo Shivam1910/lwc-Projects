@@ -1,0 +1,22 @@
+<template>
+    <lightning-card title=" Child Component">
+        <div if:true={childRecords}>
+            <div class="slds-grid slds-gutters">
+                <div class="slds-col slds-size_1-of-6" style="width:200px;">
+
+                    <lightning-formatted-rich-text value={childRecords.Image__c}>
+                    </lightning-formatted-rich-text>
+
+                </div>
+                <div class="slds-col slds-size_1-of-4">
+                    <p><b>Name</b> : {childRecords.Name}</p>
+                    <p><b>CEO's</b> : {childRecords.CEO_S__c}</p>
+                    <p><b>Technology</b> : {childRecords.Technology__c}</p>
+                    <p><b>Location</b> : {childRecords.Location__c}</p>
+                </div>
+
+            </div>
+
+        </div>
+    </lightning-card>
+</template>

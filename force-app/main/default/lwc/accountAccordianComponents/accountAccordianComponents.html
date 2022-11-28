@@ -1,0 +1,14 @@
+<template>
+    <div title=" Account" style="height: 300px;">
+        <lightning-datatable key-field="id" data={accountRecord} columns={column}>
+        </lightning-datatable>
+        <lightning-accordion-section name="A" label="Accordion Title A">
+            <lightning-button-menu slot="actions" alternative-text="Show menu" icon-size="x-small"
+                menu-alignment="right">
+                <lightning-menu-item value="New" label="Menu Item One"></lightning-menu-item>
+                <lightning-menu-item value="Edit" label="Menu Item Two"></lightning-menu-item>
+            </lightning-button-menu>
+            <p>This is the content area for section A.</p>
+        </lightning-accordion-section>
+    </div>
+</template>

@@ -1,0 +1,10 @@
+<template>
+    <div style="width: 40%;">
+        <lightning-card title="Student Search" icon-name="standard: account">
+            <lightning-combobox style="width: 300px;" name="progress" label="Select City" placeholder="Select Progress"
+                options={studentCity} onchange={handleChange}>
+            </lightning-combobox>
+            <c-student-data-child show-selected-city-record={selectedCityRecord}> </c-student-data-child>
+        </lightning-card>
+    </div>
+</template>

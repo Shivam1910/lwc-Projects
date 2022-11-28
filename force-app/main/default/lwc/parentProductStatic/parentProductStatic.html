@@ -1,0 +1,9 @@
+<template>
+    <lightning-card variant="Narrow" title="The layout of the Parent Component" icon-name="standard:account">
+        <lightning-datatable data={data} columns={columns} key-field="id" onrowselection={handleSelected}
+            show-row-number-column=true;>
+        </lightning-datatable>
+        <c-child-product-static columns={columns} selected-records={selectedRecords} sum-amount={sumAmount}>
+        </c-child-product-static>
+    </lightning-card>
+</template>

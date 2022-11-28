@@ -1,0 +1,8 @@
+<template>
+    <lightning-card title="Contact" icon-name="standard:contact">
+        <lightning-combobox label="Select City" value={value} placeholder="All" options={options}
+            onchange={handleChange}></lightning-combobox>
+        <br />
+        <lightning-datatable data={contactRecordsToShow} columns={columns} key-field="id"></lightning-datatable>
+    </lightning-card>
+</template>

@@ -1,0 +1,35 @@
+<template>
+    <div class="slds-card" style="width:500px;">
+        <lightning-card title="User" variant="narrow" icon-name="standard:user" class="slds-grid_vertical-stretch">
+            <b>Total User : {totalCount}</b>
+            <lightning-layout>
+                <lightning-layout-item>
+                    <lightning-input name="User" placeholder="Enter user " onchange={handleChange}>
+                    </lightning-input>
+                </lightning-layout-item>
+                <lightning-layout-item>
+                    <lightning-button style="padding-top: 15px;" label="Search" variant="Base" onclick={handleClick}
+                        class="slds-float_left slds-m-left_x-small">
+                    </lightning-button>
+                </lightning-layout-item>
+            </lightning-layout>
+            <div class="slds-scrollable" style="height:10rem;width:100rem">
+                <table style="width:500px;">
+                    <template for:each={userRecords} for:item="user">
+                        <tr key={user.Id}>
+                            <td>
+                                <img src={user.FullPhotoUrl} style="padding: 15px;" width="120px;" height="50px;">
+
+                            </td>
+                            <td>
+                                {user.Name}<br>{user.Email}
+                            </td>
+                        </tr>
+                    </template>
+
+                </table>
+
+            </div>
+        </lightning-card>
+    </div>
+</template>

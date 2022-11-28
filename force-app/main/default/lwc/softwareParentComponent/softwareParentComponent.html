@@ -1,0 +1,20 @@
+<template>
+    <lightning-card title="Software" variant="narrow" icon-name="custom:software" class="slds-grid_vertical-stretch">
+        <lightning-layout>
+            <lightning-layout-item>
+                <lightning-combobox name="progress" label="Select Company" placeholder="Select here"
+                    class="slds-m-around_medium" style="width:300px;" options={filterRecords} onchange={handleChange}>
+                </lightning-combobox>
+            </lightning-layout-item>
+            <lightning-layout-item>
+                <lightning-button style="padding-top: 39px;" label="Show" variant="base"
+                    class="slds-float_left slds-m-left_x-small" onclick={handleClick}>
+                </lightning-button>
+            </lightning-layout-item>
+        </lightning-layout>
+        <div if:true={showButton}>
+            <c-software-child-component all-records={sendingVar}></c-software-child-component>
+        </div>
+    </lightning-card>
+
+</template>

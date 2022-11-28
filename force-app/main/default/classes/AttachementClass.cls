@@ -2,7 +2,6 @@ public class AttachementClass {
     List<Contact> contactRecords = [SELECT Id, Name, Phone, LeadSource, Email,(Select id from Attachments) FROM Contact];
     public List<WrapperContact> contactList{get;set;}
     public String attId{get;set;}
-    
     public AttachementClass() {
         contactList = new List<WrapperContact>();
         fillRecords();
@@ -26,8 +25,9 @@ public class AttachementClass {
         
     }
     
-    public PageReference deleteRecord(){
-        DELETE [SELECT Id FROM Attachment WHERE Id =: attId];
+    public PageReference deleteRecord(){// is class which is to ref id
+        DELETE [SELECT Id FROM Attachment WHERE Id =: attId];//parent ki id laa rha hai
+        system.debug('asdf'+attId);
         PageReference pg = new PageReference('/apex/attachement_page');  
         pg.setRedirect(true);
         return pg;

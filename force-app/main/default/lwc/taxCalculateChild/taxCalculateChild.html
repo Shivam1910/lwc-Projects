@@ -1,0 +1,17 @@
+<template>
+    <lightning-card variant="Narrow" title="Calculation">
+        <lightning-layout>
+            <lightning-layout-item padding="around-small">
+                <div class="header-column">
+                    <lightning-input type="number" label="Total" value={total} disabled=true></lightning-input>
+                </div>
+            </lightning-layout-item>
+            <lightning-layout-item padding="around-small">
+                <div class="header-column">
+                    <lightning-input type="number" label="Total with Tax (5% tax)" value={totalwithtex} disabled=true>
+                    </lightning-input>
+                </div>
+            </lightning-layout-item>
+        </lightning-layout>
+    </lightning-card>
+</template>

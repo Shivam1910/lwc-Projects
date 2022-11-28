@@ -1,0 +1,26 @@
+<template>
+    <lightning-card title="Student Details" icon-name="custom:custom1">
+
+        <template for:each={showStudentRecord} for:item="stu">
+            <div key={stu.Id}>
+                <div class="slds-grid slds-gutters">
+                    <div class="slds-col">
+                        <span>
+                            <p><b>Name :</b>{stu.Name}&nbsp;{Last_Name__c}</p>
+                            <p><b>Phone : {stu.Phone__c}</b></p>
+                            <p><b>City :</b>{stu.City__c}</p>
+                            <p><b>Email : </b>{stu.City__c}</p>
+                        </span>
+                    </div>
+                    <div class="slds-col">
+                        <span>
+                            <div style="height: 40%; width: 23%;">
+                                <lightning-formatted-rich-text value={stu.Image__c}></lightning-formatted-rich-text>
+                            </div>
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </template>
+    </lightning-card>
+</template>

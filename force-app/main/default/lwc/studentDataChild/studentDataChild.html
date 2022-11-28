@@ -1,0 +1,22 @@
+<template>
+    <lightning-card title=" Student Record" icon-name=" standard:contact">
+        <div if:true={showSelectedCityRecord}>
+            <template for:each={showSelectedCityRecord} for:item="show">
+                <div key={showrec} class="slds-m-around_medium">
+                    <lightning-icon style="float: left; padding-left: 4px;" icon-name="custom:custom1"
+                        alternative-text="Approved" title="Approved">
+                    </lightning-icon>
+                    <lightning-button style="float:right" label="Show Details" variant="success"
+                        class="slds-m-right-small" onclick={handleClick} data-id={show.Id}>
+                    </lightning-button>
+                    <h3>&nbsp;&nbsp;{show.Name}&nbsp;{show.Last_Name__c}</h3><br />
+                    <p> <b>Residence in </b> : {show.City__c}</p>
+                </div>
+            </template>
+        </div>
+        <div if:true={thirdChild}>
+            <c-student-data-childs show-student-record={thirdChild}></c-student-data-childs>
+        </div>
+    </lightning-card>
+
+</template>

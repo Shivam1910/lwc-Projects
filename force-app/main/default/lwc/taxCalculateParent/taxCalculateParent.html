@@ -1,0 +1,23 @@
+<template>
+    <lightning-card variant="Narrow" title="Tax Calculation" icon-name="standard:account">
+        <div class="c-container">
+            <lightning-card variant="Narrow" title="Input">
+                <lightning-layout>
+                    <lightning-layout-item padding="around-small">
+                        <div class="header-column">
+                            <lightning-input type="number" name="price" label="Price" onchange={handleChange}>
+                            </lightning-input>
+                        </div>
+                    </lightning-layout-item>
+                    <lightning-layout-item padding="around-small">
+                        <div class="header-column">
+                            <lightning-input type="number" name="qty" label="Qty" onchange={handleChange}>
+                            </lightning-input>
+                        </div>
+                    </lightning-layout-item>
+                </lightning-layout>
+            </lightning-card>
+            <c-tax-calculate-child total={total} totalwithtex={totalwithtax}></c-tax-calculate-child>
+        </div>
+    </lightning-card>
+</template>

@@ -1,0 +1,15 @@
+<template>
+    <lightning-card variant="Narrow" title="The layout of the Child Component" icon-name="standard:account">
+        <lightning-datatable key-field="Id" data={selectedRecords} columns={columns} show-row-number-column=true;
+            onrowselection={getSelectedName}>
+        </lightning-datatable>
+        <div class="slds-grid">
+            <div class="slds-box slds-col slds-size_6-of-12 slds-align_absolute-center">
+                <span> <b>Net Payable Amount</b></span>
+            </div>
+            <div class="slds-box slds-col slds-size_6-of-12 slds-text-align_right">
+                <span>{sumAmount}</span>
+            </div>
+        </div>
+    </lightning-card>
+</template>

@@ -1,0 +1,18 @@
+<template>
+    <lightning-card variant="Narrow" icon-name="standard:account">
+
+        <lightning-combobox name="account" label="Account" value={accValue} placeholder="Please Select"
+            options={optionsAcc} onchange={handleChangeAccount}></lightning-combobox>
+
+        <div if:true={accValue}>
+
+            <lightning-combobox name="contact" label="Contact" value={conValue} placeholder="Please Select"
+                options={optionsCon} onchange={handleChangeContact}>
+            </lightning-combobox>
+        </div>
+        <div if:true={conValue}>
+            <lightning-datatable key-field="id" data={taskRecords} columns={columnsList} hide-checkbox-column="true">
+            </lightning-datatable>
+        </div>
+    </lightning-card>
+</template>
